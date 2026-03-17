@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lek med ballen – øvelser G2018 vår 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Fredoka+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2ecc71;
+    --dark-green: #1a8a4a;
+    --grass: #27ae60;
+    --yellow: #f1c40f;
+    --orange: #e67e22;
+    --red: #e74c3c;
+    --blue: #3498db;
+    --dark: #1a1a2e;
+    --white: #ffffff;
+    --light: #f0faf4;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.1);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, var(--dark-green) 0%, var(--grass) 60%, var(--green) 100%);
+    color: white;
+    padding: 2.5rem 1.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 60px);
+  }
+
+  .header-ball {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  header h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    line-height: 1.1;
+  }
+
+  header p {
+    margin-top: 0.6rem;
+    font-size: 1.05rem;
+    opacity: 0.9;
+    font-weight: 600;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave svg { display: block; width: 100%; height: 48px; }
+
+  /* PROGRESS BAR */
+  .progress-section {
+    background: white;
+    padding: 1.4rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .progress-label {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--dark-green);
+    white-space: nowrap;
+  }
+
+  .progress-bar-wrap {
+    flex: 1;
+    min-width: 120px;
+    background: #e8f5e9;
+    border-radius: 50px;
+    height: 14px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--green), var(--yellow));
+    border-radius: 50px;
+    transition: width 0.6s ease;
+    width: 0%;
+  }
+
+  .progress-count {
+    font-weight: 900;
+    font-size: 1rem;
+    color: var(--dark-green);
+    white-space: nowrap;
+  }
+
+  .trophy-badge {
+    background: linear-gradient(135deg, var(--yellow), var(--orange));
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: none;
+  }
+
+  /* SEASON HEADER */
+  .season-header {
+    max-width: 700px;
+    margin: 2rem auto 0.5rem;
+    padding: 0 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .season-header h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    color: var(--dark-green);
+  }
+
+  .season-header span {
+    font-size: 1.4rem;
+  }
+
+  /* EXERCISES GRID */
+  .exercises {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0.5rem 1.2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  /* EXERCISE CARD */
+  .exercise-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+  }
+
+  .exercise-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+  }
+
+  .exercise-card.done {
+    border-color: var(--green);
+    background: linear-gradient(135deg, #f0fff4, #ffffff);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .card-number {
+    background: linear-gradient(180deg, var(--dark-green), var(--grass));
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    width: 60px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-body {
+    padding: 1rem 1.1rem;
+    flex: 1;
+  }
+
+  .card-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .card-desc {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .card-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: #e8f5e9;
+    color: var(--dark-green);
+    border-radius: 50px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .tag.orange { background: #fff3e0; color: var(--orange); }
+  .tag.blue { background: #e3f2fd; color: var(--blue); }
+
+  .done-stamp {
+    display: none;
+    background: var(--green);
+    color: white;
+    font-weight: 900;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .exercise-card.done .done-stamp { display: flex; }
+
+  /* VIDEO SECTION */
+  .video-section {
+    background: #1a1a2e;
+    padding: 0.8rem 1.1rem;
+    display: none;
+  }
+
+  .video-section.has-video { display: block; }
+
+  .video-label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .video-placeholder {
+    background: #2a2a3e;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    border: 2px dashed rgba(255,255,255,0.15);
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-placeholder:hover { border-color: var(--green); }
+
+  .video-placeholder .play-btn {
+    width: 54px;
+    height: 54px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .video-placeholder:hover .play-btn {
+    transform: scale(1.1);
+    background: var(--yellow);
+  }
+
+  .video-placeholder p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+  }
+
+  /* Actual video embed */
+  .video-embed {
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    display: none;
+  }
+
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ADD VIDEO BUTTON */
+  .add-video-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: 1.5px dashed rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.5);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .add-video-btn:hover {
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  /* CARD ACTIONS */
+  .card-actions {
+    padding: 0.9rem 1.1rem;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-done {
+    background: linear-gradient(135deg, var(--green), var(--dark-green));
+    color: white;
+    border: none;
+    padding: 0.6rem 1.3rem;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 3px 10px rgba(46,204,113,0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .btn-done:hover {
+    transform: scale(1.04);
+    box-shadow: 0 5px 16px rgba(46,204,113,0.4);
+  }
+
+  .btn-done:active { transform: scale(0.97); }
+
+  .exercise-card.done .btn-done {
+    background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+    box-shadow: none;
+  }
+
+  .completion-date {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 600;
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .modal-overlay.active { display: flex; }
+
+  .modal {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: popIn 0.25s ease;
+  }
+
+  @keyframes popIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .modal h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 0.4rem;
+  }
+
+  .modal p { color: #666; font-size: 0.95rem; margin-bottom: 1.2rem; }
+
+  .modal input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: center;
+  }
+
+  .modal input:focus { border-color: var(--green); }
+
+  .modal-btns {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .btn-cancel {
+    flex: 1;
+    padding: 0.7rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    background: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.15s;
+  }
+
+  .btn-cancel:hover { border-color: #ccc; color: #555; }
+
+  .btn-confirm {
+    flex: 2;
+    padding: 0.7rem;
+    background: linear-gradient(135deg, var(--green), var(--dark-green));
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+
+  .btn-confirm:hover { transform: scale(1.03); }
+
+  /* CELEBRATION */
+  .celebration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2000;
+    display: none;
+  }
+
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    animation: fall 1.8s ease-out forwards;
+  }
+
+  @keyframes fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* VIDEO MODAL */
+  .video-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .video-modal-overlay.active { display: flex; }
+
+  .video-modal {
+    background: #1a1a2e;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+  }
+
+  .video-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.2rem;
+    color: white;
+  }
+
+  .video-modal-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+  }
+
+  .btn-close-video {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-modal-body {
+    aspect-ratio: 16/9;
+    background: black;
+  }
+
+  .video-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.82rem;
+  }
+
+  /* ADMIN PANEL */
+  .admin-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--dark);
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: transform 0.2s;
+  }
+
+  .admin-toggle:hover { transform: rotate(20deg); }
+
+  /* INFO BOX */
+  .info-box {
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    padding: 0 1.2rem;
+  }
+
+  .info-inner {
+    background: linear-gradient(135deg, #e8f5e9, #f0fff4);
+    border-left: 4px solid var(--green);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-size: 0.88rem;
+    color: #2d6a4f;
+    line-height: 1.6;
+  }
+
+  .info-inner strong { font-weight: 800; }
+
+  @media (max-width: 480px) {
+    .card-number { width: 48px; min-width: 48px; font-size: 1.5rem; }
+    .modal { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <span class="header-ball">⚽</span>
+  <h1>Lek med ballen<br>G2018 vår 2025</h1>
+  <p>Øv hjemme – bli bedre sammen!</p>
+  <div class="wave">
+    <svg viewBox="0 0 1200 48" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,48 L0,24 Q300,0 600,24 Q900,48 1200,24 L1200,48 Z" fill="#f0faf4"/>
+    </svg>
+  </div>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-section">
+  <span class="progress-label">⚡ Fremgang:</span>
+  <div class="progress-bar-wrap">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+  <span class="progress-count" id="progressCount">0 / 0 gjort</span>
+  <span class="trophy-badge" id="trophyBadge">🏆 Diplom i sikte!</span>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box">
+  <div class="info-inner">
+    🎯 <strong>Slik fungerer det:</strong> Gjør øvelsen sammen med barnet ditt, trykk så «Vi er ferdige!» og skriv inn barnets navn. Alle som fullfører <strong>8 av 10 øvelser</strong> i løpet av halvåret får et diplom! 🥇
+  </div>
+</div>
+
+<!-- SEASON HEADER -->
+<div class="season-header">
+  <span>📋</span>
+  <h2>Halvår 1 – 10 øvelser</h2>
+</div>
+
+<!-- EXERCISES -->
+<div class="exercises" id="exerciseList"></div>
+
+<!-- FOOTER -->
+<footer>
+  Laget med ❤️ for laget · <span id="footerYear"></span>
+</footer>
+
+<!-- ADMIN BUTTON -->
+<button class="admin-toggle" onclick="toggleAdmin()" title="Rediger øvelser">⚙️</button>
+
+<!-- DONE MODAL -->
+<div class="modal-overlay" id="doneModal">
+  <div class="modal">
+    <div style="font-size:3rem;margin-bottom:0.5rem">🎉</div>
+    <h3>Supert!</h3>
+    <p>Skriv inn barnets navn så vi husker at dere har gjort øvelsen:</p>
+    <input type="text" id="childNameInput" placeholder="Barnets navn" maxlength="30">
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">Avbryt</button>
+      <button class="btn-confirm" onclick="confirmDone()">Registrer ✅</button>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="video-modal-overlay" id="videoModal">
+  <div class="video-modal">
+    <div class="video-modal-header">
+      <span class="video-modal-title" id="videoModalTitle">Se øvelsen</span>
+      <button class="btn-close-video" onclick="closeVideoModal()">✕</button>
+    </div>
+    <div class="video-modal-body" id="videoModalBody"></div>
+  </div>
+</div>
+
+<!-- CELEBRATION -->
+<div class="celebration" id="celebration"></div>
+
+<script>
+// ============================================================
+// ØVELSESDATA – rediger her!
+// ============================================================
+const exercises = [
+  {
+    id: 1,
+    title: "Tæpping med fotsålene",
+    desc: "Tæpp ballen med fotsålene – bruk begge bein. Start rolig og gjør det fortere etter hvert, men det viktigste er å ha kontroll på ballen. Var det enkelt? Sjekk ut ulike Coerver-øvelser på YouTube for mer inspirasjon!",
+    tags: ["Ballfølelse", "Teknikk"],
+    tagColors: ["green", "blue"],
+    videoId: "",
+    videoUrl: "",
+    icon: "👟"
+  },
+  {
+    id: 2,
+    title: "Veggdanke",
+    desc: "Hvor mange ganger klarer du å sparke ballen i en vegg på direkten uten å miste kontroll? Spill alene, sammen med venner eller mamma, pappa eller andre. Eksperimenter: Hva funker best – harde pasninger, svake pasninger, innside, strak vrist? Bruk begge bein!",
+    tags: ["Pasning", "Teknikk"],
+    tagColors: ["green", "blue"],
+    videoId: "",
+    videoUrl: "",
+    icon: "🧱"
+  },
+  {
+    id: 3,
+    title: "Ensprett med mamma/pappa/annen",
+    desc: "Hvor mange berøringer klarer dere før ballen går i bakken? Tell høyt hver gang for å motivere hverandre. Rekorden skriver dere på en lapp og henger på kjøleskapet! 🧲",
+    tags: ["Samarbeid", "Ballfølelse"],
+    tagColors: ["green", "orange"],
+    videoId: "",
+    videoUrl: "",
+    icon: "🤝"
+  },
+  {
+    id: 4,
+    title: "Skudd på mål",
+    desc: "Finn en passe stor bøtte, søppeldunk, to sko – eller hva som helst som kan være et mål. Lag et merke i passe avstand og se hvor mange ganger du treffer på 10 forsøk. Eksperimenter med innside, utside, strak vrist, hardt og svakt skudd. Hva funker best?",
+    tags: ["Skudd", "Presisjon"],
+    tagColors: ["orange", "green"],
+    videoId: "",
+    videoUrl: "",
+    icon: "🥅"
+  },
+  {
+    id: 5,
+    title: "Volley tilbake til voksen",
+    desc: "Forelder/foresatt kaster opp ballen og barnet sparker den tilbake på volley – slik at forelderen tar imot. Hvor mange ganger klarer dere å holde det gående? Eksperimenter med hva som funker best: innside eller strak vrist.",
+    tags: ["Volley", "Samarbeid"],
+    tagColors: ["blue", "green"],
+    videoId: "",
+    videoUrl: "",
+    icon: "⚡"
+  },
+  {
+    id: 6,
+    title: "Dribling med slalåm",
+    desc: "Finn et område med god plass. Lag merker med 20–30 meters mellomrom og legg gjerne ut noen pinner som slalåmporter. Løp frem og tilbake med ballen uten å miste kontroll. Hva blir rekorden din? Prøv én gang til og se om du klarer å slå den!",
+    tags: ["Dribling", "Kondisjon"],
+    tagColors: ["green", "orange"],
+    videoId: "",
+    videoUrl: "",
+    icon: "🏃"
+  },
+  {
+    id: 7,
+    title: "L-finte",
+    desc: "Dra ballen bakover med fotsålen, og til siden med innsiden – som en L. Gjenta til du har full kontroll. Når du mestrer den: test en dobbelt-L! Se videoen for demonstrasjon.",
+    tags: ["Finter", "Teknikk"],
+    tagColors: ["orange", "blue"],
+    videoId: "",
+    videoUrl: "",
+    icon: "🌀"
+  },
+  {
+    id: 8,
+    title: "Sålevending & Cruyff-finte",
+    desc: "Sålevending: Dra ballen tilbake dit du kom fra med sålen – veldig effektiv finte! Når du har fått til den: test Cruyff-finten. Late som du skyter eller sender en pasning, og dra ballen tilbake med innsiden av foten. Verdens beste finte? I hvert fall den peneste. 😎",
+    tags: ["Finter", "Teknikk"],
+    tagColors: ["orange", "green"],
+    videoId: "",
+    videoUrl: "",
+    icon: "💃"
+  },
+  {
+    id: 9,
+    title: "360°",
+    desc: "Får du til denne kan du drible som Zinedine Zidane og Håkon Evjen! Se videoen og øv deg trinn for trinn. Start sakte og bygg opp farten gradvis.",
+    tags: ["Finter", "Avansert"],
+    tagColors: ["orange", "blue"],
+    videoId: "",
+    videoUrl: "",
+    icon: "⭐"
+  },
+  {
+    id: 10,
+    title: "Robins overstegsfinte",
+    desc: "Med denne kan du rundlure en motstander som presser deg i ryggen. Se videoen for steg-for-steg forklaring, og øv til den sitter!",
+    tags: ["Finter", "Avansert"],
+    tagColors: ["blue", "orange"],
+    videoId: "",
+    videoUrl: "",
+    icon: "🎩"
+  }
+];
+
+// ============================================================
+// STATE
+// ============================================================
+// ============================================================
+// GOOGLE SHEETS – lim inn din URL her etter du har deployet
+// ============================================================
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzS4mqhS-c0chpx0O58E6VTUK-Yv93FF13bMeZBoxmRGLVEE3ZznQmyJ_iz5ETuqb5zjw/exec';
+
+let completions = JSON.parse(localStorage.getItem('fotball_completions') || '{}');
+let pendingExerciseId = null;
+
+// ============================================================
+// RENDER
+// ============================================================
+function render() {
+  const list = document.getElementById('exerciseList');
+  list.innerHTML = '';
+
+  exercises.forEach((ex, index) => {
+    const done = !!completions[ex.id];
+    const card = document.createElement('div');
+    card.className = 'exercise-card' + (done ? ' done' : '');
+    card.id = 'card-' + ex.id;
+    card.style.animationDelay = (index * 0.05) + 's';
+
+    const hasVideo = ex.videoId || ex.videoUrl;
+
+    card.innerHTML = `
+      <div class="card-top">
+        <div class="card-number">${ex.icon || ex.id}</div>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;">
+            <div class="card-title">Øvelse ${ex.id}: ${ex.title}</div>
+            <div class="done-stamp">✅ Gjort!</div>
+          </div>
+          <div class="card-desc">${ex.desc}</div>
+          <div class="card-meta">
+            ${ex.tags.map((t,i) => `<span class="tag ${ex.tagColors[i] || 'green'}">${t}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+
+      ${hasVideo ? `
+      <div class="video-section has-video">
+        <div class="video-label">📹 Se øvelsen</div>
+        ${ex.videoId ? `
+          <div class="video-placeholder" onclick="playYoutube('${ex.videoId}', '${ex.title}')">
+            <div class="play-btn">▶</div>
+            <p>Se video</p>
+          </div>
+        ` : ex.videoUrl ? `
+          <div class="video-placeholder" onclick="playLocal('${ex.videoUrl}', '${ex.title}')">
+            <div class="play-btn">▶</div>
+            <p>Se video</p>
+          </div>
+        ` : ''}
+      </div>` : `
+      <div class="video-section has-video">
+        <div class="video-label">📹 Video</div>
+        <div style="display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
+          <div style="color:rgba(255,255,255,0.4);font-size:0.82rem;">Ingen video lagt til enda</div>
+          <button class="add-video-btn" onclick="promptAddVideo(${ex.id})">+ Legg til video</button>
+        </div>
+      </div>`}
+
+      <div class="card-actions">
+        <button class="btn-done" onclick="openDoneModal(${ex.id})">
+          ${done ? '✅ Allerede gjort' : '🎯 Vi er ferdige!'}
+        </button>
+        ${done && completions[ex.id].childName ? `<span class="completion-date">👦 ${completions[ex.id].childName} · ${completions[ex.id].date}</span>` : ''}
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  updateProgress();
+}
+
+// ============================================================
+// PROGRESS
+// ============================================================
+function updateProgress() {
+  const total = exercises.length;
+  const done = Object.keys(completions).length;
+  const pct = total > 0 ? (done / total) * 100 : 0;
+
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressCount').textContent = done + ' / ' + total + ' gjort';
+
+  const trophy = document.getElementById('trophyBadge');
+  if (done >= Math.ceil(total * 0.8)) {
+    trophy.style.display = 'inline';
+  } else {
+    trophy.style.display = 'none';
+  }
+}
+
+// ============================================================
+// MODAL
+// ============================================================
+function openDoneModal(id) {
+  pendingExerciseId = id;
+  const input = document.getElementById('childNameInput');
+  if (completions[id] && completions[id].childName) {
+    input.value = completions[id].childName;
+  } else {
+    input.value = '';
+  }
+  document.getElementById('doneModal').classList.add('active');
+  setTimeout(() => input.focus(), 100);
+}
+
+function closeModal() {
+  document.getElementById('doneModal').classList.remove('active');
+  pendingExerciseId = null;
+}
+
+function confirmDone() {
+  const name = document.getElementById('childNameInput').value.trim();
+  if (!name) {
+    document.getElementById('childNameInput').style.borderColor = '#e74c3c';
+    setTimeout(() => document.getElementById('childNameInput').style.borderColor = '#e0e0e0', 1500);
+    return;
+  }
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('no-NO', { day:'numeric', month:'short' });
+  const exercise = exercises.find(e => e.id === pendingExerciseId);
+
+  completions[pendingExerciseId] = { childName: name, date: dateStr, ts: Date.now() };
+  localStorage.setItem('fotball_completions', JSON.stringify(completions));
+  closeModal();
+  render();
+  celebrate();
+
+  // Send til Google Sheets
+  if (SHEETS_URL && SHEETS_URL !== 'DIN_APPS_SCRIPT_URL_HER') {
+    const params = new URLSearchParams({
+      navn: name,
+      ovelse_nr: pendingExerciseId,
+      ovelse_tittel: exercise ? exercise.title : '',
+      dato: now.toLocaleDateString('no-NO'),
+      tidspunkt: now.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' })
+    });
+    fetch(SHEETS_URL + '?' + params.toString(), { method: 'GET', mode: 'no-cors' })
+      .catch(() => {}); // Stille feil – lokal lagring er allerede gjort
+  }
+}
+
+// ============================================================
+// CELEBRATION
+// ============================================================
+function celebrate() {
+  const el = document.getElementById('celebration');
+  el.style.display = 'block';
+  el.innerHTML = '';
+  const colors = ['#2ecc71','#f1c40f','#e74c3c','#3498db','#e67e22','#9b59b6'];
+  for (let i = 0; i < 60; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.top = '-20px';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = Math.random() * 0.8 + 's';
+    c.style.animationDuration = (1.2 + Math.random() * 1.2) + 's';
+    c.style.width = (6 + Math.random() * 8) + 'px';
+    c.style.height = (6 + Math.random() * 8) + 'px';
+    el.appendChild(c);
+  }
+  setTimeout(() => el.style.display = 'none', 3000);
+}
+
+// ============================================================
+// VIDEO
+// ============================================================
+function playYoutube(id, title) {
+  document.getElementById('videoModalTitle').textContent = title;
+  document.getElementById('videoModalBody').innerHTML =
+    `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+  document.getElementById('videoModal').classList.add('active');
+}
+
+function playLocal(url, title) {
+  document.getElementById('videoModalTitle').textContent = title;
+  document.getElementById('videoModalBody').innerHTML =
+    `<video controls autoplay style="width:100%;height:100%;background:#000"><source src="${url}"><p style="color:white;padding:1rem">Videoen kunne ikke lastes.</p></video>`;
+  document.getElementById('videoModal').classList.add('active');
+}
+
+function closeVideoModal() {
+  document.getElementById('videoModal').classList.remove('active');
+  document.getElementById('videoModalBody').innerHTML = '';
+}
+
+function promptAddVideo(exerciseId) {
+  const url = prompt(`Lim inn YouTube-video-ID eller URL til videofilen for øvelse ${exerciseId}:\n\nEksempel YouTube: dQw4w9WgXcQ\nEksempel lokal: videos/ovelse1.mp4`);
+  if (url) {
+    // Ekstraher YouTube-ID hvis full URL
+    const ytMatch = url.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    if (ytMatch) {
+      alert(`✅ YouTube-ID funnet: ${ytMatch[1]}\n\nFor å lagre permanent: åpne fotballoyvelser.html i en teksteditor, finn øvelse ${exerciseId} og sett videoId: "${ytMatch[1]}"`);
+    } else {
+      alert(`📁 Lokal video: ${url}\n\nFor å lagre permanent: åpne fotballoyvelser.html i en teksteditor, finn øvelse ${exerciseId} og sett videoUrl: "${url}"`);
+    }
+  }
+}
+
+// ============================================================
+// ADMIN TOGGLE
+// ============================================================
+function toggleAdmin() {
+  const msg = `⚙️ ADMIN-INFO
+
+Slik legger du til videoer:
+1. Åpne fotballoyvelser.html i VS Code eller Notepad
+2. Finn "const exercises = [" øverst i scriptet
+3. For YouTube-video: sett videoId: "ABC123XYZ12" (11-tegns ID fra YouTube-URL)
+4. For egen video: legg filen i samme mappe og sett videoUrl: "videos/ovelse1.mp4"
+
+Slik nullstiller du registreringer:
+Åpne nettleserens "Utviklerverktøy" (F12) → Console → skriv:
+localStorage.removeItem('fotball_completions'); location.reload();`;
+  alert(msg);
+}
+
+// ============================================================
+// KEYBOARD
+// ============================================================
+document.getElementById('childNameInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') confirmDone();
+  if (e.key === 'Escape') closeModal();
+});
+
+document.getElementById('doneModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('doneModal')) closeModal();
+});
+
+document.getElementById('videoModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('videoModal')) closeVideoModal();
+});
+
+// ============================================================
+// INIT
+// ============================================================
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
