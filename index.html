@@ -685,7 +685,7 @@
     <div style="font-size:3rem;margin-bottom:0.5rem">🎉</div>
     <h3>Supert!</h3>
     <p>Skriv inn barnets navn så vi husker at dere har gjort øvelsen:</p>
-    <input type="text" id="childNameInput" placeholder="Barnets navn" maxlength="30">
+    <input type="text" id="childNameInput" placeholder="Barnets navn (ta med etternavn hvis flere i kullet har samme navn!)" maxlength="50">
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal()">Avbryt</button>
       <button class="btn-confirm" onclick="confirmDone()">Registrer ✅</button>
@@ -820,7 +820,7 @@ const exercises = [
 // ============================================================
 // GOOGLE SHEETS – lim inn din URL her etter du har deployet
 // ============================================================
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzS4mqhS-c0chpx0O58E6VTUK-Yv93FF13bMeZBoxmRGLVEE3ZznQmyJ_iz5ETuqb5zjw/exec';
+const SHEETS_URL = 'DIN_APPS_SCRIPT_URL_HER';
 
 let completions = JSON.parse(localStorage.getItem('fotball_completions') || '{}');
 let pendingExerciseId = null;
