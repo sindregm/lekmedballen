@@ -685,7 +685,7 @@
     <div style="font-size:3rem;margin-bottom:0.5rem">🎉</div>
     <h3>Supert!</h3>
     <p>Skriv inn barnets navn så vi husker at dere har gjort øvelsen:</p>
-    <input type="text" id="childNameInput" placeholder="Barnets navn (etternavn hvis flere i kullet har samme navn!)" maxlength="50">
+    <input type="text" id="childNameInput" placeholder="Barnets navn (ta med etternavn hvis flere i kullet har samme navn!)" maxlength="50">
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal()">Avbryt</button>
       <button class="btn-confirm" onclick="confirmDone()">Registrer ✅</button>
@@ -718,8 +718,8 @@ const exercises = [
     desc: "Tæpp ballen med fotsålene – bruk begge bein. Start rolig og gjør det fortere etter hvert, men det viktigste er å ha kontroll på ballen. Var det enkelt? Sjekk ut ulike Coerver-øvelser på YouTube for mer inspirasjon!",
     tags: ["Ballfølelse", "Teknikk"],
     tagColors: ["green", "blue"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["1a.mp4", "1b.mp4"],
+    videoLabels: ["Video 1", "Video 2"],
     icon: "👟"
   },
   {
@@ -728,8 +728,8 @@ const exercises = [
     desc: "Hvor mange ganger klarer du å sparke ballen i en vegg på direkten uten å miste kontroll? Spill alene, sammen med venner eller mamma, pappa eller andre. Eksperimenter: Hva funker best – harde pasninger, svake pasninger, innside, strak vrist? Bruk begge bein!",
     tags: ["Pasning", "Teknikk"],
     tagColors: ["green", "blue"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["2.mp4"],
+    videoLabels: ["Se øvelsen"],
     icon: "🧱"
   },
   {
@@ -738,8 +738,8 @@ const exercises = [
     desc: "Hvor mange berøringer klarer dere før ballen går i bakken? Tell høyt hver gang for å motivere hverandre. Rekorden skriver dere på en lapp og henger på kjøleskapet! 🧲",
     tags: ["Samarbeid", "Ballfølelse"],
     tagColors: ["green", "orange"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["3.mp4"],
+    videoLabels: ["Se øvelsen"],
     icon: "🤝"
   },
   {
@@ -748,8 +748,8 @@ const exercises = [
     desc: "Finn en passe stor bøtte, søppeldunk, to sko – eller hva som helst som kan være et mål. Lag et merke i passe avstand og se hvor mange ganger du treffer på 10 forsøk. Eksperimenter med innside, utside, strak vrist, hardt og svakt skudd. Hva funker best?",
     tags: ["Skudd", "Presisjon"],
     tagColors: ["orange", "green"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["4.mp4"],
+    videoLabels: ["Se øvelsen"],
     icon: "🥅"
   },
   {
@@ -758,8 +758,8 @@ const exercises = [
     desc: "Forelder/foresatt kaster opp ballen og barnet sparker den tilbake på volley – slik at forelderen tar imot. Hvor mange ganger klarer dere å holde det gående? Eksperimenter med hva som funker best: innside eller strak vrist.",
     tags: ["Volley", "Samarbeid"],
     tagColors: ["blue", "green"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["5.mp4"],
+    videoLabels: ["Se øvelsen"],
     icon: "⚡"
   },
   {
@@ -768,8 +768,8 @@ const exercises = [
     desc: "Finn et område med god plass. Lag merker med 20–30 meters mellomrom og legg gjerne ut noen pinner som slalåmporter. Løp frem og tilbake med ballen uten å miste kontroll. Hva blir rekorden din? Prøv én gang til og se om du klarer å slå den!",
     tags: ["Dribling", "Kondisjon"],
     tagColors: ["green", "orange"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["6.mp4"],
+    videoLabels: ["Se øvelsen"],
     icon: "🏃"
   },
   {
@@ -778,8 +778,8 @@ const exercises = [
     desc: "Dra ballen bakover med fotsålen, og til siden med innsiden – som en L. Gjenta til du har full kontroll. Når du mestrer den: test en dobbelt-L! Se videoen for demonstrasjon.",
     tags: ["Finter", "Teknikk"],
     tagColors: ["orange", "blue"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["7a.mp4", "7b.mp4"],
+    videoLabels: ["L-finte", "Dobbelt-L"],
     icon: "🌀"
   },
   {
@@ -788,8 +788,8 @@ const exercises = [
     desc: "Sålevending: Dra ballen tilbake dit du kom fra med sålen – veldig effektiv finte! Når du har fått til den: test Cruyff-finten. Late som du skyter eller sender en pasning, og dra ballen tilbake med innsiden av foten. Verdens beste finte? I hvert fall den peneste. 😎",
     tags: ["Finter", "Teknikk"],
     tagColors: ["orange", "green"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["8a.mp4", "8b.mp4"],
+    videoLabels: ["Sålevending", "Cruyff-finte"],
     icon: "💃"
   },
   {
@@ -798,8 +798,8 @@ const exercises = [
     desc: "Får du til denne kan du drible som Zinedine Zidane og Håkon Evjen! Se videoen og øv deg trinn for trinn. Start sakte og bygg opp farten gradvis.",
     tags: ["Finter", "Avansert"],
     tagColors: ["orange", "blue"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["9.mp4"],
+    videoLabels: ["Se øvelsen"],
     icon: "⭐"
   },
   {
@@ -808,8 +808,8 @@ const exercises = [
     desc: "Med denne kan du rundlure en motstander som presser deg i ryggen. Se videoen for steg-for-steg forklaring, og øv til den sitter!",
     tags: ["Finter", "Avansert"],
     tagColors: ["blue", "orange"],
-    videoId: "",
-    videoUrl: "",
+    videoUrls: ["10a.mp4", "10b.mp4"],
+    videoLabels: ["Video 1", "Video 2"],
     icon: "🎩"
   }
 ];
@@ -839,7 +839,7 @@ function render() {
     card.id = 'card-' + ex.id;
     card.style.animationDelay = (index * 0.05) + 's';
 
-    const hasVideo = ex.videoId || ex.videoUrl;
+    const hasVideo = ex.videoUrls && ex.videoUrls.length > 0;
 
     card.innerHTML = `
       <div class="card-top">
@@ -856,28 +856,17 @@ function render() {
         </div>
       </div>
 
-      ${hasVideo ? `
       <div class="video-section has-video">
         <div class="video-label">📹 Se øvelsen</div>
-        ${ex.videoId ? `
-          <div class="video-placeholder" onclick="playYoutube('${ex.videoId}', '${ex.title}')">
-            <div class="play-btn">▶</div>
-            <p>Se video</p>
-          </div>
-        ` : ex.videoUrl ? `
-          <div class="video-placeholder" onclick="playLocal('${ex.videoUrl}', '${ex.title}')">
-            <div class="play-btn">▶</div>
-            <p>Se video</p>
-          </div>
-        ` : ''}
-      </div>` : `
-      <div class="video-section has-video">
-        <div class="video-label">📹 Video</div>
-        <div style="display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
-          <div style="color:rgba(255,255,255,0.4);font-size:0.82rem;">Ingen video lagt til enda</div>
-          <button class="add-video-btn" onclick="promptAddVideo(${ex.id})">+ Legg til video</button>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          ${ex.videoUrls.map((url, i) => `
+            <div class="video-placeholder" style="flex:1;min-width:120px;" onclick="playLocal('${url}', '${ex.title} – ${ex.videoLabels[i] || ('Video ' + (i+1))}')">
+              <div class="play-btn">▶</div>
+              <p>${ex.videoLabels[i] || ('Video ' + (i+1))}</p>
+            </div>
+          `).join('')}
         </div>
-      </div>`}
+      </div>
 
       <div class="card-actions">
         <button class="btn-done" onclick="openDoneModal(${ex.id})">
